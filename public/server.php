@@ -7,7 +7,7 @@ use Shaleighna\Bullsockets\Server;
 
 $server = IoServer::factory(
     new Server(),
-    80
+    8080
 );
 
 $server->run();
