@@ -1,0 +1,7 @@
+{
+    "name": "shaleighna/bullsockets",
+    "type": "project",
+    "require": {
+        "cboden/ratchet": "^0.4.1"
+    }
+}
