@@ -1,9 +1,9 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use Ratchet\Server\IoServer;
-use Shaleighna\Server;
+use Shaleighna\Bullsockets\Server;
 
 $server = IoServer::factory(
     new Server(),

@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaleighna;
+namespace Shaleighna\Bullsockets;
 
 use Ratchet\ConnectionInterface;
 use Ratchet\MessageComponentInterface;
