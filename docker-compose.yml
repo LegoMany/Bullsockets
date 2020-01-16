@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  httpd:
+    image: in2code/httpd:2.4-alpine
+    environment:
+      WEB_DOCUMENT_ROOT: /app/${WEBROOT}/
+      VIRTUAL_HOST: ${HOST}
+      VIRTUAL_PORT: 443
+      VIRTUAL_PROTO: https
+    volumes:
+      - ./:/app/:cached
+    networks:
+      default:
+        aliases:
+          - ${HOST}
+
+  php:
+    image: in2code/php-dev:7.2-fpm
+    volumes:
+      - ./:/app/:cached
+      - $HOME/.composer/auth.json:/tmp/composer/auth.json
+      - $HOME/.composer/cache/:/tmp/composer/cache/
+    env_file:
+      - .env
+
+  mail:
+    image: mailhog/mailhog
+    environment:
+      VIRTUAL_PORT: 8025
